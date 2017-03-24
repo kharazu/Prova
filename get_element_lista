@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+'''
+def potenza(base, esponente):
+    if esponente == 0:
+        return 1
+    else:
+        return base * potenza(base, esponente - 1)
+
+print potenza(2,4)
+'''
+
+def get_element_lista(L,newL):
+    # se è vuota, non fare niente
+    if not L: return
+    # se è una lista chiama printList sul primo elemento
+    if type(L[0]) == type([]):
+        get_element_lista(L[0],newL)
+    else: #non è una lista, quindi visualizzalo 
+        #print L[0]
+	newL.append(L[0]) 
+    # adesso procedi con la parte restante di L 
+    get_element_lista(L[1:],newL)
+    return newL
